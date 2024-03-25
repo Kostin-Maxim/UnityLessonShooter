@@ -18,6 +18,11 @@ public class ReactiveTarget : MonoBehaviour
 
     public void ReactToHit()
     {
+        WanderAI behavior = GetComponent<WanderAI>();
+        if (behavior != null) 
+        { 
+            behavior.SetAlive(false);
+        }
         StartCoroutine(Die());
     }
 
