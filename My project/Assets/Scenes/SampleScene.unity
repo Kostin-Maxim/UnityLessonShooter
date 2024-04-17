@@ -1270,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c7a2ba77fb2ab4f80c4b676927d6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedSlider: {fileID: 0}
+  speedSlider: {fileID: 1551981609}
 --- !u!1 &439586370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,6 +2150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   gravity: -9.8
+  baseSpeed: 1
 --- !u!143 &929904240
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3599,12 +3600,12 @@ MonoBehaviour:
       - m_Target: {fileID: 421913468}
         m_TargetAssemblyTypeName: SettingsPopup, Assembly-CSharp
         m_MethodName: OnSpeedValue
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

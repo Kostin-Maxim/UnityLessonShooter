@@ -6,7 +6,23 @@ public class FPSInput : MonoBehaviour
 {
     public float speed = 1.0f;
     public float gravity = -9.8f;
+    public float baseSpeed = 6.0f;
     private CharacterController charController;
+
+    private void OnEnable()
+    {
+        Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
+
+    private void OnDisable()
+    {
+        Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
+
+    private void OnSpeedChanged(float value)
+    { 
+        speed = baseSpeed * value;
+    }
 
     // Start is called before the first frame update
     void Start()

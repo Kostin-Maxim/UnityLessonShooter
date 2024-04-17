@@ -6,11 +6,22 @@ public class WanderAI : MonoBehaviour
 {
     public float speed = 1.0f;
     public float obstacleRange = 5.0f;
+    public float baseSpeed = 3.0f;
 
     [SerializeField] private GameObject fireballPrefab;
     private GameObject fireball;
 
     private bool isAlive;
+
+    private void OnEnable()
+    {
+        Messenger<float>.AddListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
+
+    private void OnDisable()
+    {
+        Messenger<float>.RemoveListener(GameEvent.SPEED_CHANGED, OnSpeedChanged);
+    }
 
     void Start()
     {
@@ -44,6 +55,11 @@ public class WanderAI : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnSpeedChanged(float value)
+    {
+        speed = baseSpeed * value;
     }
 
     public void SetAlive(bool isAlive)

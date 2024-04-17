@@ -357,6 +357,8 @@
 "Assets/Scripts/BasicUI.cs"
 "Assets/Scripts/Fireball.cs"
 "Assets/Scripts/FPSInput.cs"
+"Assets/Scripts/GameEvent.cs"
+"Assets/Scripts/Messenger.cs"
 "Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/PlayerCharacter.cs"
 "Assets/Scripts/RayShooter.cs"
